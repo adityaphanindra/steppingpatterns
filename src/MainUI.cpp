@@ -1,7 +1,20 @@
-#include <iostream>
+///
+/// \file MainUI.cpp
+/// \brief 
+/// \author PISUPATI Phanindra
+/// \date 01.04.2014
+///
 
-using namespace std;
+#include "MainUI.h"
 
-int main() {
-	cout << "Hello!" << endl;
+// --------------------------------------------------------- Constructors
+VisualToolUI::VisualToolUI() : 
+	QMainWindow() 
+{
+	_plot = new QCustomPlot(this);
+	_plot->setMinimumSize(600, 600);
+
+	QGridLayout * gridLayout = new QGridLayout();
+	gridLayout->addWidget(_plot); // add plot to layout
+	setLayout(gridLayout);
 }
